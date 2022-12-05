@@ -5,7 +5,7 @@ export default function Card(props) {
    return (
       <div className={style.div}>
          <div className={style.divBoton}>
-            <button className={style.button} onClick={props.onClose}>X</button>
+            <button className={style.button} onClick={()=>props.onClose(props.id)}>X</button>
          </div>
          <div className={style.imgNombre}>
             <img  src={props.image} alt="" className={style.imagen} />
