@@ -19,6 +19,10 @@ function Nav({onSearch}) {
       <Link to="/detail">
         <span>Detail</span>
       </Link>
+
+      <Link to="/favorites">
+        <span>Favoritos</span>
+      </Link>
     </nav>
   </div>
   );

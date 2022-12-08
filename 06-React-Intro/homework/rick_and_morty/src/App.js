@@ -8,6 +8,7 @@ import {Route, Routes, Link, useLocation, useNavigate} from "react-router-dom"
 import About from "./components/About"
 import Detail from './components/Detail'
 import Form from './components/Form'
+import Favorites from './components/Favorites'
 
 
 
@@ -30,8 +31,8 @@ function App () {
   !access && navigate('/'); // si access es true entonces no me redirije a barra, siempre que sea false entonces siempre me redirijira a barra
 }, [access]);
 
-  const onSearch=(character)=>{
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+  const onSearch=(id)=>{
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {
@@ -51,10 +52,11 @@ function App () {
       
         
     <Routes>
-      <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>}/>
+      <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/detail/:detailId" element={<Detail/>}/>
       <Route path="/" element={<Form login={login}/>}/>
+      <Route path="/favorites" element={<Favorites />}/>
     </Routes>
     </div>
   )

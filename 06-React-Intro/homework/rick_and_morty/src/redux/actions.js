@@ -1,8 +1,7 @@
-export const ADD_MOVIE_FAVORITE="ADD_MOVIE_FAVORITE"
-export const REMOVE_MOVIE_FAVORITE="REMOVE_MOVIE_FAVORITE"
+import {ADD_MOVIE_FAVORITE, REMOVE_MOVIE_FAVORITE,FILTER, ORDER} from "./reducer";
 
 
-const apikey= "6fd09f9a"
+
 
 
 export function addMovieFavorite(id) {
@@ -12,4 +11,12 @@ export function addMovieFavorite(id) {
   export function removeMovieFavorite(id) {
     return { type: REMOVE_MOVIE_FAVORITE, payload:id };
   }
+
+  export function filterCards(status) {
+    return { type: FILTER, payload:status };
+  }
+  export function orderCards(idG) {
+    return { type: ORDER, payload:idG };
+  }
+  
   
